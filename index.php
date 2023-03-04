@@ -1,12 +1,8 @@
-$sql_data = array(
-    ['Name', 'age', 'Gender'],
-    ['Bob', 20, 'Male'],
-    ['John', 25, 'Male'],
-    ['Jessica', 30, 'Female']
-);;
-
-
 <?php 
+
+
+
+error_reporting(0);
 
 /*
 $sql_data = array(
@@ -30,21 +26,33 @@ $array = [];
 
 foreach( $matches[1] as $key){
   
- echo array($key); 
+// echo array($key); 
     
 array_push($array, array($key)); 
     
 }
 
-print_r($array); 
-    
+header('Content-Type: application/json; charset=utf-8');
+echo json_encode($array);
 
-$fp = fopen('file.csv','w');
+//echo '<pre>';
+//print_r($array); 
+//echo '</pre>';   
 
-foreach($array as $fields){
-     fputcsv($fp, $fields);
-}
 
-fclose($fp);
+
+//
+//$fp = fopen('fileNew_221.csv','w');
+//
+//foreach($array as $fields){
+//     fputcsv($fp, $fields);
+//}
+//
+//
+//
+//fclose($fp);
+
+
 
 ?>
+
