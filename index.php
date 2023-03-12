@@ -41,6 +41,16 @@
     
 function generateImageQr(){
     var imageId = jQuery('#imageUploadQr').prop('files')[0];
+    
+    var uploadFileSize = Math.floor(imageId.size/1024); 
+    
+    console.log(uploadFileSize,'size uploaded file');
+    
+    if(uploadFileSize > 1024){
+        alert('Please upload less than 1 MB SQL File');
+        return false; 
+    }
+    
     console.log(imageId);
     var formData = new FormData(); 
     formData.append('file',imageId);
@@ -53,7 +63,7 @@ function generateImageQr(){
         contentType : false, 
         processData : false, 
         success : function(data){
-      //  console.log(data,'sql data');
+      console.log(data,'sql data');
             
             var tableResult = ''; 
             
